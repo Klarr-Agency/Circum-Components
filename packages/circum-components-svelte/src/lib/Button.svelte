@@ -22,8 +22,7 @@
 	type BtnStyle = keyof typeof STYLE;
 	const STYLE = {
 		primary: 'primary',
-		secondary: 'secondary',
-		outline: 'outline'
+		secondary: 'secondary'
 	} as const;
 
 	type BtnRadius = keyof typeof RADIUS;
@@ -54,7 +53,7 @@
 <style lang="scss">
 	.btn {
 		padding: 1rem 1.5rem;
-        border: 1px solid transparent;
+        border: 2px solid transparent;
         cursor: pointer;
 		font-family: var(--font);
 		transition: all 0.25s ease-out;
@@ -75,14 +74,28 @@
 		}
 		&--primary {
 			background-color: var(--primary);
-			color: var(--white);
+			color: var(--primary-text-color);
 			&:hover {
-				color: var(--black);
+				color: var(--secondary-text-color);
 			}
 			&:focus-visible {
                 outline: 0;
-                color: var(--black);
-				border-color: var(--white);
+                color: var(--secondary-text-color);
+				border-color: var(--secondary-text-color);
+			}
+		}
+        &--secondary {
+			background-color: transparent;
+            border-color: var(--primary);
+			color: var(--secondary-text-color);
+			&:hover {
+                color: var(--secondary-text-color);
+                border-color: var(--secondary-text-color);
+			}
+			&:focus-visible {
+                outline: 0;
+                color: var(--secondary-text-color);
+				border-color: var(--secondary-text-color);
 			}
 		}
 	}
