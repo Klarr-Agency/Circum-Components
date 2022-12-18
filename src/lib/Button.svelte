@@ -3,7 +3,7 @@
 	const dispatch = createEventDispatcher();
 	export let disabled: boolean = false;
 	export let text: string = '';
-	export let action: BtnAction;
+	export let action: BtnAction | '' = '';
 	export let style: BtnStyle = 'primary';
 	export let radius: BtnRadius = 'default';
 	export let type: BtnType = 'button';
