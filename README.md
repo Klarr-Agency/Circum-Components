@@ -20,3 +20,19 @@ This project is brand new. Come back later!
 - [ ] Tile [![Status No started yet](https://img.shields.io/badge/-Not%20started%20yet-red)]()
 - [ ] Tag [![Status No started yet](https://img.shields.io/badge/-Not%20started%20yet-red)]()
 - [ ] Grid [![Status No started yet](https://img.shields.io/badge/-Not%20started%20yet-red)]()
+
+## CSS Variables
+You need to define those variables in one of your css file. In our case we have created a global.scss file and added a import in +layout.svelte file.
+```
+:root {
+    --primary: #384abe;
+    --secondary: #384abe;
+    --black: #000000;
+    --white: #ffffff;
+    --radius-0_5: 0.5rem;
+    --radius-1: 1rem;
+    --radius-2: 2rem;
+    --font: 'Inter';
+    --disabled: #7e7e7e;
+}
+```
