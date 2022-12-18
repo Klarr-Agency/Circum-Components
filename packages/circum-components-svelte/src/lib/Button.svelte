@@ -52,21 +52,21 @@
 </button>
 
 <style lang="scss">
-	:root {
-		--primary: #384abe;
-		--secondary: #384abe;
-		--black: #000000;
-		--white: #ffffff;
-		--radius-0_5: 0.5rem;
-		--radius-1: 1rem;
-		--radius-2: 2rem;
-		--font: 'Inter';
-	}
 	.btn {
 		padding: 1rem 1.5rem;
-		border: 0;
+        border: 1px solid transparent;
+        cursor: pointer;
 		font-family: var(--font);
 		transition: all 0.25s ease-out;
+        &[disabled] {
+			opacity: 0.5;
+			color: var(--disabled);
+			cursor: default;
+			&:hover {
+				color: var(--disabled);
+				border-color: var(--disabled);
+			}
+		}
 		&--default {
 			border-radius: var(--radius-1);
 		}
@@ -74,14 +74,14 @@
 			border-radius: var(--radius-0_5);
 		}
 		&--primary {
-			border: 1px solid var(--primary);
 			background-color: var(--primary);
 			color: var(--white);
 			&:hover {
 				color: var(--black);
 			}
 			&:focus-visible {
-				outline: 0;
+                outline: 0;
+                color: var(--black);
 				border-color: var(--white);
 			}
 		}
