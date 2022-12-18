@@ -1,5 +1,6 @@
 <script>
 	import Button from '$lib/Button.svelte';
+    import '$lib/global.scss';
 </script>
 
 <h1>Welcome to your library project</h1>
