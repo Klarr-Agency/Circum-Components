@@ -1,5 +1,5 @@
 {
-	"name": "circum-components",
+	"name": "circum-components-svelte",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
