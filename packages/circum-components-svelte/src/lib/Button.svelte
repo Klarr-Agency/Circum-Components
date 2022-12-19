@@ -5,10 +5,12 @@
 	export let text: string = '';
 	export let action: BtnAction | '' = '';
 	export let style: BtnStyle = 'primary';
+    export let size: BtnSize = 'default';
 	export let radius: BtnRadius = 'default';
 	export let type: BtnType = 'button';
 	let styleClass = `btn--${style}`;
-	let radiusClass = `btn--${radius}`;
+	let sizeClass = `btn--size-${size}`;
+	let radiusClass = `btn--radius-${radius}`;
 
 	type BtnAction = keyof typeof ACTION;
 	const ACTION = {
@@ -34,6 +36,14 @@
 		large: 'large'
 	} as const;
 
+    type BtnSize = keyof typeof SIZE;
+	const SIZE = {
+		default: 'default',
+		small: 'small',
+		medium: 'medium',
+		large: 'large'
+	} as const;
+
 	type BtnType = keyof typeof TYPE;
 	const TYPE = {
 		button: 'button',
@@ -46,19 +56,18 @@
 	}
 </script>
 
-<button on:click={goTo} class="btn {styleClass} {radiusClass}" {disabled} {type}>
+<button on:click={goTo} class="btn {styleClass} {radiusClass} {sizeClass}" {disabled} {type}>
 	{text}{action}
 </button>
 
 <style lang="scss">
 	.btn {
-		padding: 1rem 1.5rem;
         border: 2px solid transparent;
         cursor: pointer;
 		font-family: var(--font);
 		transition: all 0.25s ease-out;
         &[disabled] {
-			opacity: 0.5;
+            opacity: 0.5;
 			color: var(--disabled);
 			cursor: default;
 			&:hover {
@@ -66,12 +75,30 @@
 				border-color: var(--disabled);
 			}
 		}
-		&--default {
-			border-radius: var(--radius-1);
+        /* Radius */
+        &--radius-none {
+            border-radius: 0;
+        }
+		&--radius-default, &--radius-medium {
+            border-radius: var(--radius-1);
 		}
-		&--small {
-			border-radius: var(--radius-0_5);
+		&--radius-small {
+            border-radius: var(--radius-0_5);
 		}
+        &--radius-large {
+            border-radius: var(--radius-2);
+		}
+        /* Size */
+        &--size-default, &--size-medium {
+            padding: 1rem 1.5rem;
+		}
+		&--size-small {
+            padding: 0.5rem 1rem;
+		}
+        &--size-large {
+            padding: 1.25rem 1.75rem;
+		}
+        /* Button style */
 		&--primary {
 			background-color: var(--primary);
 			color: var(--primary-text-color);
