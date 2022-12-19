@@ -4,7 +4,7 @@ This project is brand new. Come back later!
 
 ## Components
 
-- [ ] Button [![Status Inprogress](https://img.shields.io/badge/-Inprogress-yellow)]()
+- [x] Button [![Status Complete](https://img.shields.io/badge/-Complete-brightgreen)]()
 - [ ] Text Input [![Status No started yet](https://img.shields.io/badge/-Not%20started%20yet-red)]()
 - [ ] Search input [![Status No started yet](https://img.shields.io/badge/-Not%20started%20yet-red)]()
 - [ ] Number input [![Status No started yet](https://img.shields.io/badge/-Not%20started%20yet-red)]()
@@ -34,5 +34,7 @@ You need to define those variables in one of your css file. In our case we have 
     --radius-2: 2rem;
     --font: 'Inter';
     --disabled: #7e7e7e;
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #000000;
 }
 ```
