@@ -22,7 +22,7 @@ This project is brand new. Come back later!
 - [ ] Grid [![Status No started yet](https://img.shields.io/badge/-Not%20started%20yet-red)]()
 
 ## CSS Variables
-You need to define those variables in one of your css file. In our case we have created a global.scss file and added a import in +layout.svelte file.
+You need to define those variables in one of your css file or you can import global.css in your +layout.svelte to get our default style.
 ```
 :root {
     --primary: #384abe;
