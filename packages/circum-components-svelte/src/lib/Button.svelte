@@ -51,14 +51,19 @@
 		reset: 'reset'
 	} as const;
 
-	function goTo() {
-		dispatch('click');
-	}
+	const goTo = () => dispatch('click');
+    const submit = () => dispatch('submit');
 </script>
 
-<button on:click={goTo} class="btn {styleClass} {radiusClass} {sizeClass}" {disabled} {type}>
-	{text}{action}
-</button>
+{#if type === 'submit'}
+    <button on:click={submit} class="btn {styleClass} {radiusClass} {sizeClass}" {disabled} {type}>
+        {text}{action}
+    </button>
+    {:else if type === 'button'}
+    <button on:click={goTo} class="btn {styleClass} {radiusClass} {sizeClass}" {disabled} {type}>
+        {text}{action}
+    </button>
+{/if}
 
 <style lang="scss">
 	.btn {
