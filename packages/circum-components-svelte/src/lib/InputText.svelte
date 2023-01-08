@@ -1,8 +1,8 @@
 <script lang="ts">
     export let placeholder: string = 'placeholder';
     export let spacing: InputSpacing = '1';
-    export let value:string = '';
-    
+    export let value: string = '';
+    export let label: string = '';
     let spacingClass = `margin--tb${spacing}`;
     type InputSpacing = keyof typeof SPACING;
 	const SPACING = {
@@ -10,17 +10,42 @@
         "2":"2",
         "3":"3"
 	} as const;
+
+    const uid = () => {
+        const randomString = String(
+            Date.now().toString(32) +
+            Math.random().toString(16)
+        ).replace(/\./g, '');
+        return randomString;
+    }
+    const uniqueId = uid();
 </script>
 
 <div class="inputText {spacingClass}">
-    <input 
-        bind:value={value}
-        on:input
-        class="inputText__input" type="text" {placeholder}>
+    {#if label === ''}
+        <input 
+            bind:value={value}
+            on:input
+            class="inputText__input" type="text" {placeholder}>
+        {:else}
+        <label for={uniqueId}-{label} class="inputText__label">{label}</label>
+        <input
+            id={uniqueId}-{label} 
+            bind:value={value}
+            on:input
+            class="inputText__input" type="text" {placeholder}>
+    {/if}
 </div>
 
 <style lang="scss">
 	.inputText {
+        display: flex;
+        flex-direction: column;
+        max-width: 250px;
+        &__label {
+            font-family: var(--font);
+            margin-bottom: 0.5rem;
+        }
         &__input {
             display: flex;
             background-color: var(--gray-90);
