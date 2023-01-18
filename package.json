@@ -1,26 +1,33 @@
 {
-  "name": "circum-components-monorepo",
-  "version": "0.0.1",
-  "description": "This project is brand new. Come back later!",
-  "scripts": {
-    "build": "npx lerna run build",
-    "npm-publish": "npx lerna publish --no-private",
-    "npm-publish-github": "npx lerna publish from-package --yes --registry https://npm.pkg.github.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Klarr-Agency/Circum-components.git"
-  },
-  "author": "Klarr-agency",
-  "license": "MPL-2.0 license",
-  "bugs": {
-    "url": "https://github.com/Klarr-Agency/Circum-components/issues"
-  },
-  "homepage": "https://github.com/Klarr-Agency/Circum-components#readme",
-  "workspaces": [
-    "packages/*"
-  ],
-  "devDependencies": {
-    "lerna": "^5.6.2"
-  }
+	"name": "circum-components-monorepo",
+	"version": "0.0.1",
+	"description": "This project is brand new. Come back later!",
+	"scripts": {
+		"build": "npx lerna run build",
+		"npm-publish": "npx lerna publish --no-private",
+		"npm-publish-github": "npx lerna publish from-package --yes --registry https://npm.pkg.github.com",
+		"prepare": "husky install"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Klarr-Agency/Circum-components.git"
+	},
+	"author": "Klarr-agency",
+	"license": "MPL-2.0 license",
+	"bugs": {
+		"url": "https://github.com/Klarr-Agency/Circum-components/issues"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write --ignore-unknown"
+	},
+	"homepage": "https://github.com/Klarr-Agency/Circum-components#readme",
+	"workspaces": [
+		"packages/*"
+	],
+	"devDependencies": {
+		"husky": "^8.0.3",
+		"lerna": "^5.6.2",
+		"lint-staged": "^13.1.0",
+		"prettier": "2.8.3"
+	}
 }
