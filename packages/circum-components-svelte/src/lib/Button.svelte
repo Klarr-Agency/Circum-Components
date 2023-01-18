@@ -5,7 +5,7 @@
 	export let text: string = '';
 	export let action: BtnAction | '' = '';
 	export let style: BtnStyle = 'primary';
-    export let size: BtnSize = 'default';
+	export let size: BtnSize = 'default';
 	export let radius: BtnRadius = 'default';
 	export let type: BtnType = 'button';
 	let styleClass = `btn--${style}`;
@@ -36,7 +36,7 @@
 		large: 'large'
 	} as const;
 
-    type BtnSize = keyof typeof SIZE;
+	type BtnSize = keyof typeof SIZE;
 	const SIZE = {
 		default: 'default',
 		small: 'small',
@@ -52,27 +52,27 @@
 	} as const;
 
 	const goTo = () => dispatch('click');
-    const submit = () => dispatch('submit');
+	const submit = () => dispatch('submit');
 </script>
 
 {#if type === 'submit'}
-    <button on:click={submit} class="btn {styleClass} {radiusClass} {sizeClass}" {disabled} {type}>
-        {text}{action}
-    </button>
-    {:else if type === 'button'}
-    <button on:click={goTo} class="btn {styleClass} {radiusClass} {sizeClass}" {disabled} {type}>
-        {text}{action}
-    </button>
+	<button on:click={submit} class="btn {styleClass} {radiusClass} {sizeClass}" {disabled} {type}>
+		{text}{action}
+	</button>
+{:else if type === 'button'}
+	<button on:click={goTo} class="btn {styleClass} {radiusClass} {sizeClass}" {disabled} {type}>
+		{text}{action}
+	</button>
 {/if}
 
 <style lang="scss">
 	.btn {
-        border: 2px solid transparent;
-        cursor: pointer;
+		border: 2px solid transparent;
+		cursor: pointer;
 		font-family: var(--font);
 		transition: all 0.25s ease-out;
-        &[disabled] {
-            opacity: 0.5;
+		&[disabled] {
+			opacity: 0.5;
 			color: var(--disabled);
 			cursor: default;
 			&:hover {
@@ -80,30 +80,32 @@
 				border-color: var(--disabled);
 			}
 		}
-        /* Radius */
-        &--radius-none {
-            border-radius: 0;
-        }
-		&--radius-default, &--radius-medium {
-            border-radius: var(--radius-1);
+		/* Radius */
+		&--radius-none {
+			border-radius: 0;
+		}
+		&--radius-default,
+		&--radius-medium {
+			border-radius: var(--radius-1);
 		}
 		&--radius-small {
-            border-radius: var(--radius-0_5);
+			border-radius: var(--radius-0_5);
 		}
-        &--radius-large {
-            border-radius: var(--radius-2);
+		&--radius-large {
+			border-radius: var(--radius-2);
 		}
-        /* Size */
-        &--size-default, &--size-medium {
-            padding: 1rem 1.5rem;
+		/* Size */
+		&--size-default,
+		&--size-medium {
+			padding: 1rem 1.5rem;
 		}
 		&--size-small {
-            padding: 0.5rem 1rem;
+			padding: 0.5rem 1rem;
 		}
-        &--size-large {
-            padding: 1.25rem 1.75rem;
+		&--size-large {
+			padding: 1.25rem 1.75rem;
 		}
-        /* Button style */
+		/* Button style */
 		&--primary {
 			background-color: var(--primary);
 			color: var(--primary-text-color);
@@ -111,22 +113,22 @@
 				color: var(--secondary-text-color);
 			}
 			&:focus-visible {
-                outline: 0;
-                color: var(--secondary-text-color);
+				outline: 0;
+				color: var(--secondary-text-color);
 				border-color: var(--secondary-text-color);
 			}
 		}
-        &--secondary {
+		&--secondary {
 			background-color: transparent;
-            border-color: var(--primary);
+			border-color: var(--primary);
 			color: var(--secondary-text-color);
 			&:hover {
-                color: var(--secondary-text-color);
-                border-color: var(--secondary-text-color);
+				color: var(--secondary-text-color);
+				border-color: var(--secondary-text-color);
 			}
 			&:focus-visible {
-                outline: 0;
-                color: var(--secondary-text-color);
+				outline: 0;
+				color: var(--secondary-text-color);
 				border-color: var(--secondary-text-color);
 			}
 		}
