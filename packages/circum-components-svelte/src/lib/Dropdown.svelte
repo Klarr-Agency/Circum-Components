@@ -65,9 +65,9 @@
 							on:change={getActiveElement}
 							on:keydown={removeOpenAttributeOnKeyDown}
 						/>
-						<label for="{legend.replace(/\s/g, '-')}-{item.value}}" class="dropdown__label"
-							>{item.name}</label
-						>
+						<label for="{legend.replace(/\s/g, '-')}-{item.value}}" class="dropdown__label">
+							{item.name}
+						</label>
 					</li>
 				{/each}
 			</ul>
