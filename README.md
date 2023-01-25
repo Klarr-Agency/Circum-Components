@@ -24,11 +24,28 @@ This project is brand new. Come back later!
 ## CSS Variables
 You need to define those variables in one of your css file or you can import global.css in your +layout.svelte to get our default style.
 ```
-:root {
+.light-theme {
     --primary: #384abe;
     --secondary: #384abe;
     --black: #000000;
     --white: #ffffff;
+    --radius-0_5: 0.5rem;
+    --radius-1: 1rem;
+    --radius-2: 2rem;
+    --font: 'Inter';
+    --disabled: #7e7e7e;
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #000000;
+}
+
+.dark-theme {
+    --primary: #384abe;
+    --secondary: #384abe;
+    --black: #000000;
+    --white: #ffffff;
+    --gray-100: #0b0c0c;
+    --gray-90: #18181c;
+    --gray-80: #292930;
     --radius-0_5: 0.5rem;
     --radius-1: 1rem;
     --radius-2: 2rem;
